@@ -1,1 +1,12 @@
 <p>course-list works!</p>
+<h1>{{title}}</h1>
+<h3>{{courses.length}}</h3>
+
+<button>+</button>
+
+<ul>
+  <li *ngFor="let course of courses">
+    {{course._id}}
+    {{course.title}}
+  </li>
+</ul>
