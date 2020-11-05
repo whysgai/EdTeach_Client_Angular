@@ -25,6 +25,10 @@ export class CourseListComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    fetch('http://wbdv-generic-server.herokuapp.com/api/jannunzi/courses')
+      .then(response => response.json())
+      .then(courses => this.courses = courses);
   }
+
 
 }
