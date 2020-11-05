@@ -12,7 +12,15 @@ export class CourseListComponent implements OnInit {
     {_id: '123', title: 'Course A'},
     {_id: '345', title: 'Course B'},
     {_id: '567', title: 'Course C'}
-  ]
+  ];
+
+  newCourseTitle = '';
+
+  createCourse = (title) =>
+    this.courses.push({_id: new Date().getMilliseconds().toString(), title})
+
+  deleteCourse = (courseToDelete) =>
+    this.courses = this.courses.filter(course => course !== courseToDelete)
 
   constructor() { }
 

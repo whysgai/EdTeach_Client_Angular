@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { CourseListComponent } from './course-list/course-list.component';
+// import { AppRoutingModule } from './app-routing.module';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -10,7 +12,9 @@ import { CourseListComponent } from './course-list/course-list.component';
     CourseListComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    // AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
