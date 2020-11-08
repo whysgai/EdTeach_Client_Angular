@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { CourseService } from '../../services/CourseService';
+import { ModuleServices } from '../../services/ModuleServices';
+import { LessonServices } from '../../services/LessonServices';
+import { TopicServices } from '../../services/TopicServices';
 
 @Component({
   selector: 'app-course-list',
@@ -33,12 +37,21 @@ export class CourseListComponent implements OnInit {
 
   // findWidgetsByTopicId = (topicId) =>
 
-  constructor() { }
+  constructor(
+    private courseService: CourseService,
+    private moduleService: ModuleServices,
+    private lessonService: LessonServices,
+    private topicService: TopicServices
+  ) { }
 
   ngOnInit(): void {
-    fetch('http://wbdv-generic-server.herokuapp.com/api/cohenw/courses')
-      .then(response => response.json())
+    this.courseService.findAllCourses()
       .then(courses => this.courses = courses);
+
+    // Static, local read
+    // fetch('http://wbdv-generic-server.herokuapp.com/api/cohenw/courses')
+    //   .then(response => response.json())
+    //   .then(courses => this.courses = courses);
   }
 
 
