@@ -30,8 +30,8 @@ export class CourseService {
       .then(response => response.json())
 
 
-  deleteCourse = (id) =>
-    fetch(`https://wbdv-generic-server.herokuapp.com/api/cohenw/courses/${id}`, {
+  deleteCourse = (course) =>
+    fetch(`https://wbdv-generic-server.herokuapp.com/api/cohenw/courses/${course._id}`, {
       method: 'DELETE'
     })
       .then(response => response.json())
