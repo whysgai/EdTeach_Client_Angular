@@ -29,7 +29,9 @@ export class CourseListComponent implements OnInit {
   deleteCourse = (courseToDelete) =>
     this.courses = this.courses.filter(course => course !== courseToDelete)
 
-  // findModulesByCourseId = (courseId) => {}
+  findModulesByCourseId = (courseId) =>
+    this.moduleService.findModulesByCourse(courseId)
+      .then(modules => this.modules = modules)
 
   // findLessonsByModuleId = (moduleId) =>
 
@@ -47,7 +49,6 @@ export class CourseListComponent implements OnInit {
   ngOnInit(): void {
     this.courseService.findAllCourses()
       .then(courses => this.courses = courses);
-
     // Static, local read
     // fetch('http://wbdv-generic-server.herokuapp.com/api/cohenw/courses')
     //   .then(response => response.json())

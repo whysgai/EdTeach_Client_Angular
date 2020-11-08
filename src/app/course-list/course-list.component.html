@@ -9,7 +9,7 @@
 
 <ul class="col-3">
   <li *ngFor="let course of courses">
-    {{course.title}}
+    <a (click)="findModulesByCourseId(course._id)">{{course.title}}</a>
   </li>
 </ul>
 
