@@ -15,13 +15,13 @@
 
 <ul class="col-3">
   <li *ngFor="let module of modules">
-    {{module.title}}
+    <a (click)="findLessonsByModuleId(module._id)">{{module.title}}</a>
   </li>
 </ul>
 
 <ul class="col-3">
   <li *ngFor="let lesson of lessons">
-    {{lesson.title}}
+    <a (click)="findTopicsByLessonId(lesson._id)">{{lesson.title}}</a>
   </li>
 </ul>
 
