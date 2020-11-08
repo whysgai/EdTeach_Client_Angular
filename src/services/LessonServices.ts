@@ -3,12 +3,12 @@ import {Injectable} from '@angular/core';
 const genericApi = 'https://wbdv-generic-server.herokuapp.com/api/cohenw';
 
 @Injectable()
-export class ModuleServices {
+export class LessonServices {
 
-  createModuleForCourse = (courseId, module) =>
-    fetch(`${genericApi}/courses/${courseId}/modules`, {
+  createLessonForModule = (moduleId, lesson) =>
+    fetch(`${genericApi}/modules/${moduleId}/lessons`, {
       method: 'POST',
-      body: JSON.stringify(module),
+      body: JSON.stringify(lesson),
       headers: {
         'content-type': 'application/json'
       }
@@ -16,15 +16,15 @@ export class ModuleServices {
       .then(response => response.json())
 
 
-  findModulesByCourse = (courseId) =>
-    fetch(`${genericApi}/courses/${courseId}/modules`)
+  findLessonsByModule = (moduleId) =>
+    fetch(`${genericApi}/modules/${moduleId}/lessons`)
       .then(response => response.json())
 
 
-  updateModule = (module) =>
-    fetch(`${genericApi}/modules/${module._id}`, {
+  updateLesson = (lesson) =>
+    fetch(`${genericApi}/lessons/${lesson._id}`, {
       method: 'PUT',
-      body: JSON.stringify(module),
+      body: JSON.stringify(lesson),
       headers: {
         'content-type': 'application/json'
       }
@@ -32,8 +32,8 @@ export class ModuleServices {
       .then(response => response.json())
 
 
-  deleteModule = (module) =>
-    fetch(`${genericApi}/modules/${module._id}`, {
+  deleteLesson = (lesson) =>
+    fetch(`${genericApi}/lessons/${lesson._id}`, {
       method: 'DELETE'
     })
       .then(response => response.json())
