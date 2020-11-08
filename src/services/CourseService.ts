@@ -1,10 +1,12 @@
 import {Injectable} from '@angular/core';
 
+const genericApi = 'https://wbdv-generic-server.herokuapp.com/api/cohenw';
+
 @Injectable()
 export class CourseService {
 
   createCourse = () =>
-    fetch(`https://wbdv-generic-server.herokuapp.com/api/cohenw/courses`, {
+    fetch(`${genericApi}/courses`, {
       method: 'POST',
       body: JSON.stringify({title: 'New Course'}),
       headers: {
@@ -15,12 +17,12 @@ export class CourseService {
 
 
   findAllCourses = () =>
-    fetch(`https://wbdv-generic-server.herokuapp.com/api/cohenw/courses`)
+    fetch(`${genericApi}/courses`)
       .then(response => response.json())
 
 
   updateCourse = (course) =>
-    fetch(`https://wbdv-generic-server.herokuapp.com/api/cohenw/courses/${course._id}`, {
+    fetch(`${genericApi}/courses/${course._id}`, {
       method: 'PUT',
       body: JSON.stringify(course),
       headers: {
@@ -31,7 +33,7 @@ export class CourseService {
 
 
   deleteCourse = (course) =>
-    fetch(`https://wbdv-generic-server.herokuapp.com/api/cohenw/courses/${course._id}`, {
+    fetch(`${genericApi}/courses/${course._id}`, {
       method: 'DELETE'
     })
       .then(response => response.json())
