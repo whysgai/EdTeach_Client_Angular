@@ -7,10 +7,26 @@
 
 <!--<button (click)="createCourse(newCourseTitle)">+</button>-->
 
-<ul>
+<ul class="col-3">
   <li *ngFor="let course of courses">
-    {{course._id}}
     {{course.title}}
-    <button (click)="deleteCourse(course)">-</button>
+  </li>
+</ul>
+
+<ul class="col-3">
+  <li *ngFor="let module of modules">
+    {{module.title}}
+  </li>
+</ul>
+
+<ul class="col-3">
+  <li *ngFor="let lesson of lessons">
+    {{lesson.title}}
+  </li>
+</ul>
+
+<ul class="col-3">
+  <li *ngFor="let topic of topics">
+    {{topic.title}}
   </li>
 </ul>
