@@ -13,7 +13,9 @@ export class CourseListComponent implements OnInit {
     {_id: '345', title: 'Course B'},
     {_id: '567', title: 'Course C'}
   ];
-  modules = []
+  modules = [];
+  lessons = [];
+  topics = [];
 
   newCourseTitle = '';
 
