@@ -33,9 +33,13 @@ export class CourseListComponent implements OnInit {
     this.moduleService.findModulesByCourse(courseId)
       .then(modules => this.modules = modules)
 
-  // findLessonsByModuleId = (moduleId) =>
+  findLessonsByModuleId = (moduleId) =>
+    this.lessonService.findLessonsByModule(moduleId)
+      .then(lessons => this.lessons = lessons)
 
-  // findTopicsByLessonId = (lessonId) =>
+  findTopicsByLessonId = (lessonId) =>
+    this.topicService.findTopicsByLesson(lessonId)
+      .then(topics => this.topics = topics)
 
   // findWidgetsByTopicId = (topicId) =>
 
