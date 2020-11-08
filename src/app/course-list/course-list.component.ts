@@ -13,6 +13,7 @@ export class CourseListComponent implements OnInit {
     {_id: '345', title: 'Course B'},
     {_id: '567', title: 'Course C'}
   ];
+  modules = []
 
   newCourseTitle = '';
 
@@ -22,10 +23,18 @@ export class CourseListComponent implements OnInit {
   deleteCourse = (courseToDelete) =>
     this.courses = this.courses.filter(course => course !== courseToDelete)
 
+  // findModulesByCourseId = (courseId) => {}
+
+  // findLessonsByModuleId = (moduleId) =>
+
+  // findTopicsByLessonId = (lessonId) =>
+
+  // findWidgetsByTopicId = (topicId) =>
+
   constructor() { }
 
   ngOnInit(): void {
-    fetch('http://wbdv-generic-server.herokuapp.com/api/jannunzi/courses')
+    fetch('http://wbdv-generic-server.herokuapp.com/api/cohenw/courses')
       .then(response => response.json())
       .then(courses => this.courses = courses);
   }
