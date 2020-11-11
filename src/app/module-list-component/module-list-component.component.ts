@@ -10,16 +10,17 @@ import {ModuleServices} from '../../services/ModuleServices';
 export class ModuleListComponentComponent implements OnInit {
 
   modules = [];
+  moduleId = '';
 
   constructor(
-    private activeRoute: ActivatedRoute,
+    private activatedRoute: ActivatedRoute,
     private moduleService: ModuleServices
   ) { }
 
   ngOnInit(): void {
-    this.activeRoute.params.subscribe(params => {
+    this.activatedRoute.params.subscribe(params => {
       const courseId = params.cid;
-      console.log("Load modules for cid: " + courseId);
+      this.moduleId = params.mid;
       if (typeof courseId !== 'undefined') {
         this.moduleService.findModulesByCourse(courseId)
             .then(modules => this.modules = modules);

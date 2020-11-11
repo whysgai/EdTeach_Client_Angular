@@ -1,1 +1,7 @@
 <p>lesson-tabs-component works!</p>
+<ul class="col-3">
+  <li *ngFor="let lesson of lessons"
+      [ngClass]="{'list-group-item-success': lessonId === lesson._id}">
+    <a routerLink="{{lesson._id}}/topics/">{{lesson.title}}</a>
+  </li>
+</ul>

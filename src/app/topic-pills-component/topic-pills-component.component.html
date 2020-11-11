@@ -1,1 +1,8 @@
 <p>topic-pills-component works!</p>
+<ul class="col-3">
+  <li *ngFor="let topic of topics"
+      [ngClass]="{'list-group-item-success': topicId === topic._id}">
+<!--    <a routerLink="{{topic._id}}/widgets">{{topic.title}}</a>-->
+    {{topic.title}}
+  </li>
+</ul>
