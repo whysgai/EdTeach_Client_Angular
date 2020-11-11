@@ -1,7 +1,9 @@
 <p>course-table-component works!</p>
 <ul class="col-3 list-group">
-  <li *ngFor="let course of courses">
+  <li *ngFor="let course of courses"
+      [ngClass]="{'list-group-item-success': course.id === course._id}"
+      class="list-group-item active" >
 <!--    <a (click)="findModulesByCourseId(course._id)">{{course.title}}</a>-->
-      <a class="list-group-item active">{{course.title}}</a>
+      <a routerLink="{{course._id}}/modules">{{course.title}}</a>
   </li>
 </ul>

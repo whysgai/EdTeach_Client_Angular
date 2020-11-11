@@ -14,6 +14,8 @@ import { CourseViewerComponentComponent } from './course-viewer-component/course
 import { ModuleListComponentComponent } from './module-list-component/module-list-component.component';
 import { LessonTabsComponentComponent } from './lesson-tabs-component/lesson-tabs-component.component';
 import { TopicPillsComponentComponent } from './topic-pills-component/topic-pills-component.component';
+import { AppRoutingModule } from './app-routing.module';
+import { CourseNavigatorComponent } from './course-navigator/course-navigator.component';
 
 @NgModule({
   declarations: [
@@ -23,12 +25,13 @@ import { TopicPillsComponentComponent } from './topic-pills-component/topic-pill
     CourseViewerComponentComponent,
     ModuleListComponentComponent,
     LessonTabsComponentComponent,
-    TopicPillsComponentComponent
+    TopicPillsComponentComponent,
+    CourseNavigatorComponent
   ],
   imports: [
     BrowserModule,
-    // AppRoutingModule,
-    FormsModule
+    AppRoutingModule,
+    FormsModule,
   ],
   providers: [
     CourseService,
