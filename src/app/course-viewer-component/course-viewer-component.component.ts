@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-course-viewer-component',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CourseViewerComponentComponent implements OnInit {
 
-  constructor() { }
+  layout = '';
+
+  constructor(
+    private activatedRoute: ActivatedRoute,
+  ) { }
 
   ngOnInit(): void {
+    this.activatedRoute.params.subscribe(params => {
+      this.layout = params.layout;
+    });
   }
 
 }
