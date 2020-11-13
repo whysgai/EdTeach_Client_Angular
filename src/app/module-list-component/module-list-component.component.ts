@@ -10,6 +10,8 @@ import {ModuleServices} from '../../services/ModuleServices';
 export class ModuleListComponentComponent implements OnInit {
 
   modules = [];
+  layout = '';
+  courseId = '';
   moduleId = '';
 
   constructor(
@@ -19,10 +21,11 @@ export class ModuleListComponentComponent implements OnInit {
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(params => {
-      const courseId = params.cid;
+      this.layout = params.layout;
+      this.courseId = params.cid;
       this.moduleId = params.mid;
-      if (typeof courseId !== 'undefined') {
-        this.moduleService.findModulesByCourse(courseId)
+      if (typeof this.courseId !== 'undefined') {
+        this.moduleService.findModulesByCourse(this.courseId)
             .then(modules => this.modules = modules);
       }
     });

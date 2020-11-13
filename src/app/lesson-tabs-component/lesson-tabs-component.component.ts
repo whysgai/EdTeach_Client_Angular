@@ -10,6 +10,9 @@ import {LessonServices} from '../../services/LessonServices';
 export class LessonTabsComponentComponent implements OnInit {
 
   lessons = [];
+  layout = '';
+  courseId = '';
+  moduleId = '';
   lessonId = '';
 
   constructor(
@@ -19,10 +22,12 @@ export class LessonTabsComponentComponent implements OnInit {
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(params => {
-      const moduleId = params.mid;
+      this.layout = params.layout;
+      this.courseId = params.cid;
+      this.moduleId = params.mid;
       this.lessonId = params.lid;
-      if (typeof moduleId !== 'undefined') {
-        this.lessonService.findLessonsByModule(moduleId)
+      if (typeof this.moduleId !== 'undefined') {
+        this.lessonService.findLessonsByModule(this.moduleId)
           .then(lessons => this.lessons = lessons);
       }
     });
