@@ -10,6 +10,10 @@ import {TopicServices} from '../../services/TopicServices';
 export class TopicPillsComponentComponent implements OnInit {
 
   topics = [];
+  layout = '';
+  courseId = '';
+  moduleId = '';
+  lessonId = '';
   topicId = '';
 
   constructor(
@@ -19,10 +23,13 @@ export class TopicPillsComponentComponent implements OnInit {
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(params => {
-      const lessonId = params.lid;
+      this.layout = params.layout;
+      this.courseId = params.cid;
+      this.moduleId = params.mid;
+      this.lessonId = params.lid;
       this.topicId = params.tid;
-      if (typeof lessonId !== 'undefined') {
-        this.topicService.findTopicsByLesson(lessonId)
+      if (typeof this.lessonId !== 'undefined') {
+        this.topicService.findTopicsByLesson(this.lessonId)
           .then(topics => this.topics = topics);
       }
     });
