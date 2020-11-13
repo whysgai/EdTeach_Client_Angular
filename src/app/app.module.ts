@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { CourseListComponent } from './course-list/course-list.component';
-// import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
 import {CourseService} from '../services/CourseService';
 import {ModuleServices} from '../services/ModuleServices';
@@ -14,7 +14,6 @@ import { CourseViewerComponentComponent } from './course-viewer-component/course
 import { ModuleListComponentComponent } from './module-list-component/module-list-component.component';
 import { LessonTabsComponentComponent } from './lesson-tabs-component/lesson-tabs-component.component';
 import { TopicPillsComponentComponent } from './topic-pills-component/topic-pills-component.component';
-import { AppRoutingModule } from './app-routing.module';
 import { CourseNavigatorComponent } from './course-navigator/course-navigator.component';
 import { NavbarComponent } from './navbar/navbar.component';
 
