@@ -4,8 +4,8 @@
 <h3>Please visit /table/courses for proper course list</h3>
 <a class="btn btn-outline-dark" routerLink="/table/courses/">Courses</a>
 
-<h1>{{title}}</h1>
-<h3>{{courses.length}}</h3>
+<!--<h1>{{title}}</h1>-->
+<!--<h3>{{courses.length}}</h3>-->
 
 
 
@@ -13,27 +13,27 @@
 
 <!--<button (click)="createCourse(newCourseTitle)">+</button>-->
 
-<ul class="col-3">
-  <li *ngFor="let course of courses">
-    <a (click)="findModulesByCourseId(course._id)">{{course.title}}</a>
-  </li>
-</ul>
+<!--<ul class="col-3">-->
+<!--  <li *ngFor="let course of courses">-->
+<!--    <a (click)="findModulesByCourseId(course._id)">{{course.title}}</a>-->
+<!--  </li>-->
+<!--</ul>-->
 
-<ul class="col-3">
-  <li *ngFor="let module of modules">
-    <a (click)="findLessonsByModuleId(module._id)">{{module.title}}</a>
-  </li>
-</ul>
+<!--<ul class="col-3">-->
+<!--  <li *ngFor="let module of modules">-->
+<!--    <a (click)="findLessonsByModuleId(module._id)">{{module.title}}</a>-->
+<!--  </li>-->
+<!--</ul>-->
 
-<ul class="col-3">
-  <li *ngFor="let lesson of lessons">
-    <a (click)="findTopicsByLessonId(lesson._id)">{{lesson.title}}</a>
-  </li>
-</ul>
+<!--<ul class="col-3">-->
+<!--  <li *ngFor="let lesson of lessons">-->
+<!--    <a (click)="findTopicsByLessonId(lesson._id)">{{lesson.title}}</a>-->
+<!--  </li>-->
+<!--</ul>-->
 
-<ul class="col-3">
-  <li *ngFor="let topic of topics">
-    {{topic.title}}
-  </li>
-</ul>
+<!--<ul class="col-3">-->
+<!--  <li *ngFor="let topic of topics">-->
+<!--    {{topic.title}}-->
+<!--  </li>-->
+<!--</ul>-->
 
