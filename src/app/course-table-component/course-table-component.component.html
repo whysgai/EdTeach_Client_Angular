@@ -3,10 +3,10 @@
   <ul class="list-group">
     <li class="list-group-item mt-3 active"><h4>Courses</h4></li>
     <li *ngFor="let course of courses"
-        [ngClass]="{'list-group-item-success': courseId === course._id}"
+        [ngClass]="{'active': courseId === course._id}"
         class="list-group-item" >
   <!--    <a (click)="findModulesByCourseId(course._id)">{{course.title}}</a>-->
-        <a routerLink="{{course._id}}/modules/">{{course.title}}</a>
+        <a [ngClass]="{'text-white': courseId === course._id}" routerLink="{{course._id}}/modules/">{{course.title}}</a>
     </li>
   </ul>
 </div>
