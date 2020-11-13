@@ -1,7 +1,7 @@
-<p>lesson-tabs-component works!</p>
-<ul class="col-3">
+<ul class="nav nav-tabs">
   <li *ngFor="let lesson of lessons"
-      [ngClass]="{'list-group-item-success': lessonId === lesson._id}">
-    <a routerLink="{{lesson._id}}/topics/">{{lesson.title}}</a>
+      class="nav-item"
+      [ngClass]="{'active': lessonId === lesson._id}">
+    <a class="nav-link" routerLink="{{lesson._id}}/topics/">{{lesson.title}}</a>
   </li>
 </ul>

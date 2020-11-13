@@ -1,9 +1,11 @@
-<p>module-list-component works!</p>
-<ul class="col-3">
+<ul class="list-group">
   <li *ngFor="let module of modules"
-      [ngClass]="{'list-group-item-success': moduleId === module._id}">
-<!--    <a (click)="findLessonsByModuleId(module._id)">{{module.title}}</a>-->
-<!--    <a class="list-group-item active" routerLink="/courses/{{course._id}}/modules/">{{module.title}}</a>-->
-    <a routerLink="{{module._id}}/lessons/">{{module.title}}</a>
+      class="list-group-item list-group-item-action"
+      [ngClass]="{'active': moduleId === module._id}">
+    <a routerLink="{{module._id}}/lessons/"
+       class=""
+       [ngClass]="{'text-white': moduleId === module._id}">
+      {{module.title}}
+    </a>
   </li>
 </ul>
