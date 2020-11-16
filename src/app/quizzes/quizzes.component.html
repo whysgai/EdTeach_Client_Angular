@@ -1,1 +1,15 @@
-<p>quizzes works!</p>
+<div class="col-12">
+  <ul class="list-group">
+    <li class="list-group-item mt-3 active"><h4>Quizzes</h4></li>
+    <li *ngFor="let quiz of quizzes"
+        [ngClass]="{'active': quizId === quiz._id}"
+        class="list-group-item" >
+      <!--    <a (click)="findModulesByCourseId(course._id)">{{course.title}}</a>-->
+      <a [ngClass]="{'text-white': quizId === quiz._id}"
+         routerLink="/quizzes/{{quiz._id}}">
+        {{quiz.title}}
+      </a>
+      <a class="btn btn-outline-success float-right">Start</a>
+    </li>
+  </ul>
+</div>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-quizzes',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class QuizzesComponent implements OnInit {
 
-  constructor() { }
+  quizzes = [
+    {_id: '123', title: 'Quiz 1'},
+    {_id: '234', title: 'Quiz 2'},
+    {_id: '345', title: 'Quiz 3'}
+  ];
+
+  quizId = '';
+
+  constructor(
+    // private activeRoute = ActivatedRoute
+  ) { }
 
   ngOnInit(): void {
+    // console.log('Load quizzes');
   }
 
 }
