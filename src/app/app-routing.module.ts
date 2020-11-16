@@ -6,6 +6,7 @@ import {CourseViewerComponentComponent} from './course-viewer-component/course-v
 import {CourseListComponent} from './course-list/course-list.component';
 import {AppComponent} from './app.component';
 import {QuizzesComponent} from './quizzes/quizzes.component';
+import {QuizComponent} from './quiz/quiz.component';
 
 const routes: Routes = [
   {path: '', component: CourseListComponent},
@@ -14,7 +15,8 @@ const routes: Routes = [
   {path: ':layout/courses/:cid/modules/:mid/lessons', component: CourseViewerComponentComponent},
   {path: ':layout/courses/:cid/modules/:mid/lessons/:lid/topics', component: CourseViewerComponentComponent},
   {path: ':layout/courses/:cid/modules/:mid/lessons/:lid/topics/:tid/widgets', component: CourseViewerComponentComponent},
-  {path: 'quizzes', component: QuizzesComponent}
+  {path: ':layout/courses/:cid/quizzes', component: QuizzesComponent},
+  {path: ':layout/courses/:cid/quizzes/:qid/quiz', component: QuizComponent}
 ];
 
 @NgModule({
