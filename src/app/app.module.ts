@@ -16,6 +16,7 @@ import { LessonTabsComponentComponent } from './lesson-tabs-component/lesson-tab
 import { TopicPillsComponentComponent } from './topic-pills-component/topic-pills-component.component';
 import { CourseNavigatorComponent } from './course-navigator/course-navigator.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { QuizzesComponent } from './quizzes/quizzes.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { NavbarComponent } from './navbar/navbar.component';
     LessonTabsComponentComponent,
     TopicPillsComponentComponent,
     CourseNavigatorComponent,
-    NavbarComponent
+    NavbarComponent,
+    QuizzesComponent
   ],
   imports: [
     BrowserModule,
