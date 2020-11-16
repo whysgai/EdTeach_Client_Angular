@@ -17,11 +17,16 @@ export class QuizzesComponent implements OnInit {
   quizId = '';
 
   constructor(
-    // private activeRoute = ActivatedRoute
+    private activeRoute = ActivatedRoute
   ) { }
 
   ngOnInit(): void {
-    // console.log('Load quizzes');
+    this.activeRoute.params.subscribe(params => {
+      this.courseId = params.courseId;
+      this.service.findAllQuizzes()
+        .then(quizzes => this.quizzes = quizzes);
+    });
+
   }
 
 }

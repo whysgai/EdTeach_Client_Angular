@@ -17,6 +17,7 @@ import { TopicPillsComponentComponent } from './topic-pills-component/topic-pill
 import { CourseNavigatorComponent } from './course-navigator/course-navigator.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { QuizzesComponent } from './quizzes/quizzes.component';
+import { QuizComponent } from './quiz/quiz.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { QuizzesComponent } from './quizzes/quizzes.component';
     TopicPillsComponentComponent,
     CourseNavigatorComponent,
     NavbarComponent,
-    QuizzesComponent
+    QuizzesComponent,
+    QuizComponent
   ],
   imports: [
     BrowserModule,
