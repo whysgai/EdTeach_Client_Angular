@@ -1,0 +1,25 @@
+<div>
+  <div>
+    <span>{{question.question}}</span>
+    <ul class="list-group">
+      <li *ngFor="let choice of question.choices"
+          class="list-group-item" >
+        <!--    <a (click)="findModulesByCourseId(course._id)">{{course.title}}</a>-->
+        <label [htmlFor]="choice">{{choice}}</label>
+        <input type="radio" [name]="question._id" [id]="choice"
+               class=" float-right"/>
+
+      </li>
+<!--      <li class="list-group-item">-->
+<!--        <label for="truechoice" >True</label>-->
+<!--        <input type="radio" [name]="question._id" id="truechoice"-->
+<!--               class=" float-right"/>-->
+<!--      </li>-->
+<!--      <li class="list-group-item">-->
+<!--        <label for="falsechoice">False</label>-->
+<!--        <input type="radio" [name]="question._id" id="falsechoice"-->
+<!--               class=" float-right"/>-->
+<!--      </li>-->
+    </ul>
+  </div>
+</div>

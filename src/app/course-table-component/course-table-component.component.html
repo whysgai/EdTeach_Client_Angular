@@ -6,7 +6,7 @@
         class="list-group-item" >
   <!--    <a (click)="findModulesByCourseId(course._id)">{{course.title}}</a>-->
         <a [ngClass]="{'text-white': courseId === course._id}" routerLink="{{course._id}}/modules/">{{course.title}}</a>
-        <a class="btn btn-primary float-right" routerLink="{{course._id}}/quizzes/">Quizzes</a>
+        <a class="btn btn-primary float-right" routerLink="/quizzes/">Quizzes</a>
     </li>
   </ul>
 </div>

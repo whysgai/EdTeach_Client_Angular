@@ -18,6 +18,8 @@ import { CourseNavigatorComponent } from './course-navigator/course-navigator.co
 import { NavbarComponent } from './navbar/navbar.component';
 import { QuizzesComponent } from './quizzes/quizzes.component';
 import { QuizComponent } from './quiz/quiz.component';
+import { TrueFalseQuestionComponent } from './true-false-question/true-false-question.component';
+import { MultiChoiceQuestionComponent } from './multi-choice-question/multi-choice-question.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { QuizComponent } from './quiz/quiz.component';
     CourseNavigatorComponent,
     NavbarComponent,
     QuizzesComponent,
-    QuizComponent
+    QuizComponent,
+    TrueFalseQuestionComponent,
+    MultiChoiceQuestionComponent
   ],
   imports: [
     BrowserModule,

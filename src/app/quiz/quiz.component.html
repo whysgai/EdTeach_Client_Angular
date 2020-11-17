@@ -1,1 +1,18 @@
-<p>quiz works!</p>
+<div class="card col-12 mt-3">
+  <div class="card-body">
+    <h4 class="card-title">{{quizId}}</h4>
+    <ul class="list-group">
+      <li *ngFor="let question of questions" class="list-group-item">
+        <div [ngSwitch]="question.type">
+          <app-multi-choice-question
+            [question]="question"
+            *ngSwitchCase="'MULTIPLE_CHOICE'"></app-multi-choice-question>
+          <app-true-false-question
+            [question]="question"
+            *ngSwitchCase="'TRUE_FALSE'"></app-true-false-question>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+

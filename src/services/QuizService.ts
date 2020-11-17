@@ -4,7 +4,7 @@ const localApi = '';
 
 @Injectable()
 export class QuizService {
-  findQuizzesForCourse = () =>
+  findAllQuizzes = () =>
     fetch(`${localApi}/quizzes`)
       .then(response => response.json())
 
