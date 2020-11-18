@@ -20,6 +20,7 @@ import { QuizzesComponent } from './quizzes/quizzes.component';
 import { QuizComponent } from './quiz/quiz.component';
 import { TrueFalseQuestionComponent } from './true-false-question/true-false-question.component';
 import { MultiChoiceQuestionComponent } from './multi-choice-question/multi-choice-question.component';
+import { LandingPageComponent } from './landing-page/landing-page.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { MultiChoiceQuestionComponent } from './multi-choice-question/multi-choi
     QuizzesComponent,
     QuizComponent,
     TrueFalseQuestionComponent,
-    MultiChoiceQuestionComponent
+    MultiChoiceQuestionComponent,
+    LandingPageComponent
   ],
   imports: [
     BrowserModule,

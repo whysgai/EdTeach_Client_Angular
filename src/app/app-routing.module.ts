@@ -7,9 +7,10 @@ import {CourseListComponent} from './course-list/course-list.component';
 import {AppComponent} from './app.component';
 import {QuizzesComponent} from './quizzes/quizzes.component';
 import {QuizComponent} from './quiz/quiz.component';
+import {LandingPageComponent} from './landing-page/landing-page.component';
 
 const routes: Routes = [
-  {path: '', component: CourseListComponent},
+  {path: '', component: LandingPageComponent},
   {path: 'table/courses', component: CourseTableComponentComponent},
   {path: ':layout/courses/:cid/modules', component: CourseViewerComponentComponent},
   {path: ':layout/courses/:cid/modules/:mid/lessons', component: CourseViewerComponentComponent},
