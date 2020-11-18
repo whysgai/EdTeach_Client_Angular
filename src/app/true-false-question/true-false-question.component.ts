@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+// import {faCheck, faTimes} from '@font'
 
 @Component({
   selector: 'app-true-false-question',
@@ -13,10 +14,11 @@ export class TrueFalseQuestionComponent implements OnInit {
 
   @Input()
   question = {_id: '', title: '', question: '', answer: '', correct: ''};
-  // grading = false;
+  grading = false;
   // faCheck = faCheck; faTimes = faTimes;
-  //
-  // grade = () => { this.grading = true; };
+
+  setAnswer = (choice) => { this.question.answer = choice; };
+  grade = () => { this.grading = !this.grading; };
 
 
   ngOnInit(): void {
