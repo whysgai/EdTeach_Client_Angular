@@ -15,7 +15,6 @@ export class TrueFalseQuestionComponent implements OnInit {
   @Input()
   question = {_id: '', title: '', question: '', answer: '', correct: ''};
   grading = false;
-  // faCheck = faCheck; faTimes = faTimes;
 
   setAnswer = (choice) => { this.question.answer = choice; };
   grade = () => { this.grading = !this.grading; };

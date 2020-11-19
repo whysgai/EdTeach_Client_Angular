@@ -3,13 +3,24 @@
     <span>{{question.question}}</span>
     <ul class="list-group">
       <li *ngFor="let choice of question.choices"
-          class="list-group-item" >
-        <!--    <a (click)="findModulesByCourseId(course._id)">{{course.title}}</a>-->
+          class="list-group-item"
+          [ngClass]="{'bg-success' : grading && question.correct === choice && question.answer === choice}"
+          [ngClass]="{'bg-primary' : grading && question.correct === choice && question.answer !== choice}"
+          [ngClass]="{'bg-danger' : grading && question.correct !== choice && question.answer === choice}"
+      >
         <label [htmlFor]="choice">{{choice}}</label>
         <input type="radio" [name]="question._id" [id]="choice"
-               class=" float-right"/>
-
+               class=" float-right"
+               (click)="setAnswer(choice)"
+               [hidden]="grading"
+        />
+        <i class="fa fa-check" [hidden]="!grading || !(question.correct === choice && question.answer === choice)"></i>
+        <i class="fa fa-times" [hidden]="!grading || !(question.correct !== choice && question.answer === choice)"></i>
+        <i class="fa fa-circle-o" [hidden]="!grading || !(question.correct === choice && question.answer !== choice)"></i>
       </li>
     </ul>
+    <div class="row"><span>Your answer: {{question.answer}}</span></div>
+    <div class="row"><button class="btn btn-info" (click)="grade()" [hidden]="grading">Grade</button></div>
+    <div class="row"><button class="btn btn-outline-info" (click)="grade()" [hidden]="!grading">Answer</button></div>
   </div>
 </div>
