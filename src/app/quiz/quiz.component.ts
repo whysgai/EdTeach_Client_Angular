@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import { QuestionService } from '../../services/QuestionService';
+import { QuizService } from '../../services/QuizService';
 
 @Component({
   selector: 'app-quiz',
@@ -13,8 +14,13 @@ export class QuizComponent implements OnInit {
   layout = '';
   courseId = '';
   quizId = '';
+  quiz = {
+    _id: '',
+    title: ''
+  };
 
   constructor(
+    private quizService: QuizService,
     private questionService: QuestionService,
     private activeRoute: ActivatedRoute
   ) {
@@ -25,9 +31,10 @@ export class QuizComponent implements OnInit {
       this.layout = params.layout;
       this.courseId = params.cid;
       this.quizId = params.qid;
-      console.log('Current quiz is: ' + this.quizId);
       this.questionService.findAllQuestionsForQuiz(this.quizId)
         .then(questions => this.questions = questions);
+      this.quizService.findQuizById(this.quizId)
+        .then(quiz => this.quiz = quiz);
     });
   }
 }

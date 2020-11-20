@@ -8,4 +8,7 @@ export class QuizService {
     fetch(`${localApi}/quizzes`)
       .then(response => response.json())
 
+  findQuizById = (quizId) =>
+    fetch(`${localApi}/quizzes/${quizId}`)
+      .then(response => response.json())
 }
