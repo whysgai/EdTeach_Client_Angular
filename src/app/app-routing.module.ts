@@ -1,10 +1,7 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 import {CourseTableComponentComponent} from './course-table-component/course-table-component.component';
 import {CourseViewerComponentComponent} from './course-viewer-component/course-viewer-component.component';
-import {CourseListComponent} from './course-list/course-list.component';
-import {AppComponent} from './app.component';
 import {QuizzesComponent} from './quizzes/quizzes.component';
 import {QuizComponent} from './quiz/quiz.component';
 import {LandingPageComponent} from './landing-page/landing-page.component';

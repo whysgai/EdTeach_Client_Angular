@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 
-const localApi = '';
+const localApi = 'http://localhost:4201';
 
 @Injectable()
 export class QuizService {

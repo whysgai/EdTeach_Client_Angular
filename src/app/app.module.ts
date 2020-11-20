@@ -21,6 +21,8 @@ import { QuizComponent } from './quiz/quiz.component';
 import { TrueFalseQuestionComponent } from './true-false-question/true-false-question.component';
 import { MultiChoiceQuestionComponent } from './multi-choice-question/multi-choice-question.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
+import {QuizService} from '../services/QuizService';
+import {QuestionService} from '../services/QuestionService';
 
 @NgModule({
   declarations: [
@@ -48,7 +50,9 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
     CourseService,
     ModuleServices,
     LessonServices,
-    TopicServices
+    TopicServices,
+    QuizService,
+    QuestionService
   ],
   bootstrap: [AppComponent]
 })

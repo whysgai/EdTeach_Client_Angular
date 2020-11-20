@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
+import { QuizService } from '../../services/QuizService';
 
 @Component({
   selector: 'app-quizzes',
@@ -9,24 +10,26 @@ import {ActivatedRoute} from '@angular/router';
 export class QuizzesComponent implements OnInit {
 
   quizzes = [
-    {_id: '123', title: 'Quiz 1'},
-    {_id: '234', title: 'Quiz 2'},
-    {_id: '345', title: 'Quiz 3'}
+    // {_id: '123', title: 'Quiz 1'},
+    // {_id: '234', title: 'Quiz 2'},
+    // {_id: '345', title: 'Quiz 3'}
   ];
   layout = '';
   courseId = '';
   quizId = '';
 
   constructor(
+    private quizService: QuizService,
     private activeRoute: ActivatedRoute
+
   ) { }
 
   ngOnInit(): void {
     this.activeRoute.params.subscribe(params => {
       this.layout = params.layout;
       this.courseId = params.cid;
-      // this.service.findAllQuizzes()
-      //   .then(quizzes => this.quizzes = quizzes);
+      this.quizService.findAllQuizzes()
+        .then(quizzes => this.quizzes = quizzes);
     });
 
   }

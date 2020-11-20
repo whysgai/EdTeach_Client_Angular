@@ -1,11 +1,11 @@
 import {Injectable} from '@angular/core';
 
-const localApi = '';
+const localApi = 'http://localhost:4201';
 
 @Injectable()
 export class QuestionService {
-  findAllQuestionsForQuiz = (quiz) =>
-    fetch(`${localApi}/quizzes/${quiz._id}/questions`)
+  findAllQuestionsForQuiz = (quizId) =>
+    fetch(`${localApi}/quizzes/${quizId}/questions`)
       .then(response => response.json())
 
 }
