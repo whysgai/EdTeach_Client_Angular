@@ -5,6 +5,7 @@ import {CourseViewerComponentComponent} from './course-viewer-component/course-v
 import {QuizzesComponent} from './quizzes/quizzes.component';
 import {QuizComponent} from './quiz/quiz.component';
 import {LandingPageComponent} from './landing-page/landing-page.component';
+import {AttemptListComponent} from './attempt-list/attempt-list.component';
 
 const routes: Routes = [
   {path: '', component: LandingPageComponent},
@@ -14,7 +15,8 @@ const routes: Routes = [
   {path: ':layout/courses/:cid/modules/:mid/lessons/:lid/topics', component: CourseViewerComponentComponent},
   {path: ':layout/courses/:cid/modules/:mid/lessons/:lid/topics/:tid/widgets', component: CourseViewerComponentComponent},
   {path: 'quizzes', component: QuizzesComponent},
-  {path: 'quizzes/:qid/quiz', component: QuizComponent}
+  {path: 'quizzes/:qid/quiz', component: QuizComponent},
+  {path: 'quizzes/:qid/attempts', component: AttemptListComponent}
 ];
 
 @NgModule({

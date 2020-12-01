@@ -23,6 +23,7 @@ import { MultiChoiceQuestionComponent } from './multi-choice-question/multi-choi
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import {QuizService} from '../services/QuizService';
 import {QuestionService} from '../services/QuestionService';
+import { AttemptListComponent } from './attempt-list/attempt-list.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import {QuestionService} from '../services/QuestionService';
     QuizComponent,
     TrueFalseQuestionComponent,
     MultiChoiceQuestionComponent,
-    LandingPageComponent
+    LandingPageComponent,
+    AttemptListComponent
   ],
   imports: [
     BrowserModule,
