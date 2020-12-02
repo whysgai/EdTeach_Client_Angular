@@ -1,35 +1,36 @@
 <div>
   <h5 class="">Question: {{question.question}}</h5>
+  <h4>Graded: {{graded? "true" : "false"}}</h4>
   <ul class="list-group mt-2">
     <li class="list-group-item"
-        [ngClass]="{'bg-success text-white' : grading && question.correct === 'true' && question.answer === 'true'}"
-        [ngClass]="{'bg-primary text-white' : grading && question.correct === 'true' && question.answer === 'false'}"
-        [ngClass]="{'bg-danger text-white' : grading && question.correct === 'false' && question.answer === 'true'}"
+        [ngClass]="{'bg-success text-white' : graded && question.correct === 'true' && question.answer === 'true'}"
+        [ngClass]="{'bg-primary text-white' : graded && question.correct === 'true' && question.answer === 'false'}"
+        [ngClass]="{'bg-danger text-white' : graded && question.correct === 'false' && question.answer === 'true'}"
     >
       <label for="truechoice">True</label>
       <input type="radio" [name]="question._id" id="truechoice"
              class=" float-right"
              (click)="setAnswer('true')"
-             [hidden]="grading"
+             [hidden]="graded"
       />
-      <i class="fa fa-check float-right" [hidden]="!grading || !(question.correct === 'true' && question.answer === 'true')"></i>
-      <i class="fa fa-times float-right" [hidden]="!grading || !(question.correct === 'false' && question.answer === 'true')"></i>
-      <i class="fa fa-circle-o float-right" [hidden]="!grading || !(question.correct === 'true' && question.answer === 'false')"></i>
+      <i class="fa fa-check float-right" [hidden]="!graded || !(question.correct === 'true' && question.answer === 'true')"></i>
+      <i class="fa fa-times float-right" [hidden]="!graded || !(question.correct === 'false' && question.answer === 'true')"></i>
+      <i class="fa fa-circle-o float-right" [hidden]="!graded || !(question.correct === 'true' && question.answer === 'false')"></i>
     </li>
     <li class="list-group-item"
-        [ngClass]="{'bg-success text-white' : grading && question.correct === 'false' && question.answer === 'false'}"
-        [ngClass]="{'bg-primary text-white' : grading && question.correct === 'false' && question.answer === 'true'}"
-        [ngClass]="{'bg-danger text-white' : grading && question.correct === 'true' && question.answer === 'false'}"
+        [ngClass]="{'bg-success text-white' : graded && question.correct === 'false' && question.answer === 'false'}"
+        [ngClass]="{'bg-primary text-white' : graded && question.correct === 'false' && question.answer === 'true'}"
+        [ngClass]="{'bg-danger text-white' : graded && question.correct === 'true' && question.answer === 'false'}"
     >
       <label for="falsechoice">False</label>
       <input type="radio" [name]="question._id" id="falsechoice"
              class=" float-right"
              (click)="setAnswer('false')"
-             [hidden]="grading"
+             [hidden]="graded"
       />
-      <i class="fa fa-check float-right" [hidden]="!grading || !(question.correct === 'false' && question.answer === 'false')"></i>
-      <i class="fa fa-circle-o float-right" [hidden]="!grading || !(question.correct === 'false' && question.answer === 'true')"></i>
-      <i class="fa fa-times float-right" [hidden]="!grading || !(question.correct === 'true' && question.answer === 'false')"></i>
+      <i class="fa fa-check float-right" [hidden]="!graded || !(question.correct === 'false' && question.answer === 'false')"></i>
+      <i class="fa fa-circle-o float-right" [hidden]="!graded || !(question.correct === 'false' && question.answer === 'true')"></i>
+      <i class="fa fa-times float-right" [hidden]="!graded || !(question.correct === 'true' && question.answer === 'false')"></i>
     </li>
   </ul>
   <div>

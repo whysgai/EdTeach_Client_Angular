@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 // import {faCheck, faTimes} from '@font'
 
 @Component({
@@ -15,6 +15,17 @@ export class TrueFalseQuestionComponent implements OnInit {
   @Input()
   question = {_id: '', title: '', question: '', answer: '', correct: ''};
   grading = false;
+
+  @Input()
+  graded: boolean;
+
+  // @Input()
+  // answer = '';
+  // @Output()
+  // answerChange = new EventEmitter<string>();
+  //
+  // submitAnswer = () =>
+  //   this.answerChange.emit(this.answer)
 
   setAnswer = (choice) => { this.question.answer = choice; };
   grade = () => { this.grading = !this.grading; };

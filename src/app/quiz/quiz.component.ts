@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import { QuestionService } from '../../services/QuestionService';
 import { QuizService } from '../../services/QuizService';
@@ -23,7 +23,16 @@ export class QuizComponent implements OnInit {
     private quizService: QuizService,
     private questionService: QuestionService,
     private activeRoute: ActivatedRoute
-  ) {
+  ) { }
+
+  @Input()
+  graded: boolean;
+
+  submit = () => {
+    console.log('Changing graded to true');
+    console.log(this.questions);
+    this.graded = true;
+
   }
 
   ngOnInit(): void {

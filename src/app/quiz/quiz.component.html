@@ -6,13 +6,16 @@
         <div [ngSwitch]="question.type" class="card-body">
           <app-multi-choice-question
             [question]="question"
+            [graded]="graded"
             *ngSwitchCase="'MULTIPLE_CHOICE'"></app-multi-choice-question>
           <app-true-false-question
             [question]="question"
+            [graded]="graded"
             *ngSwitchCase="'TRUE_FALSE'"></app-true-false-question>
         </div>
       </li>
     </ul>
+    <div class="row col-12"><button class="btn btn-info" (click)="submit()" [hidden]="graded">Submit</button></div>
   </div>
 </div>
 

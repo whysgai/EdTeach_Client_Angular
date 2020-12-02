@@ -1,21 +1,22 @@
 <div>
   <h5 class="">Question: {{question.question}}</h5>
+  <h4>Graded: {{graded}}</h4>
   <ul class="list-group mt-2">
     <li *ngFor="let choice of question.choices"
         class="list-group-item"
-        [ngClass]="{'bg-success text-white' : grading && question.correct === choice && question.answer === choice}"
-        [ngClass]="{'bg-primary text-white' : grading && question.correct === choice && question.answer !== choice}"
-        [ngClass]="{'bg-danger text-white' : grading && question.correct !== choice && question.answer === choice}"
+        [ngClass]="{'bg-success text-white' : graded && question.correct === choice && question.answer === choice}"
+        [ngClass]="{'bg-primary text-white' : graded && question.correct === choice && question.answer !== choice}"
+        [ngClass]="{'bg-danger text-white' : graded && question.correct !== choice && question.answer === choice}"
     >
       <label [htmlFor]="choice">{{choice}}</label>
       <input type="radio" [name]="question._id" [id]="choice"
              class=" float-right"
              (click)="setAnswer(choice)"
-             [hidden]="grading"
+             [hidden]="graded"
       />
-      <i class="fa fa-check float-right" [hidden]="!grading || !(question.correct === choice && question.answer === choice)"></i>
-      <i class="fa fa-circle-o float-right" [hidden]="!grading || !(question.correct === choice && question.answer !== choice)"></i>
-      <i class="fa fa-times float-right" [hidden]="!grading || !(question.correct !== choice && question.answer === choice)"></i>
+      <i class="fa fa-check float-right" [hidden]="!graded || !(question.correct === choice && question.answer === choice)"></i>
+      <i class="fa fa-circle-o float-right" [hidden]="!graded || !(question.correct === choice && question.answer !== choice)"></i>
+      <i class="fa fa-times float-right" [hidden]="!graded || !(question.correct !== choice && question.answer === choice)"></i>
     </li>
   </ul>
   <div>
