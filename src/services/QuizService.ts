@@ -11,4 +11,16 @@ export class QuizService {
   findQuizById = (quizId) =>
     fetch(`${localApi}/quizzes/${quizId}`)
       .then(response => response.json())
+
+  createAttempt = (quizId, questions) =>
+    fetch(`${localApi}/quizzes/${quizId}/attempts`, {
+      method: 'POST',
+      body: JSON.stringify(questions),
+      headers: {
+        'content-type': 'application/json'
+      }
+    }).then(response => response.json())
+        .then(result => console.log(result))
+
+
 }

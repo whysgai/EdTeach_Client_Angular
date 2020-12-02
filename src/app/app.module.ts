@@ -24,6 +24,7 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
 import {QuizService} from '../services/QuizService';
 import {QuestionService} from '../services/QuestionService';
 import { AttemptListComponent } from './attempt-list/attempt-list.component';
+import {AttemptService} from '../services/AttemptService';
 
 @NgModule({
   declarations: [
@@ -54,7 +55,8 @@ import { AttemptListComponent } from './attempt-list/attempt-list.component';
     LessonServices,
     TopicServices,
     QuizService,
-    QuestionService
+    QuestionService,
+    AttemptService
   ],
   bootstrap: [AppComponent]
 })

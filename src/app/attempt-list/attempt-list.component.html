@@ -1,1 +1,8 @@
-<p>attempt-list works!</p>
+<div>
+  <h4>{{quiz.title}}</h4>
+  <ul class="list-group">
+    <li *ngFor="let attempt of attempts" class="list-group-item mt-2">
+      <span>Score {{attempt.score}}</span>
+    </li>
+  </ul>
+</div>

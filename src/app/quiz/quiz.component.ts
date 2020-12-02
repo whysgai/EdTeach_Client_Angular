@@ -32,6 +32,7 @@ export class QuizComponent implements OnInit {
     console.log('Changing graded to true');
     console.log(this.questions);
     this.graded = true;
+    this.quizService.createAttempt(this.quizId, this.questions);
 
   }
 
