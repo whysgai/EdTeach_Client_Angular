@@ -1,6 +1,13 @@
 <div class="card col-12 mt-3 bg-light">
   <div class="card-body">
-    <h4 class="card-title">{{quiz.title}}</h4>
+    <div class="row">
+      <span class="col-11">
+        <h4 class="card-title">{{quiz.title}}</h4>
+      </span>
+      <a class="btn btn-outline-danger float-right col-1" routerLink="/quizzes">
+        <i class="fa fa-window-close" aria-hidden="true"></i>
+      </a>
+    </div>
     <ul class="list-group">
       <li *ngFor="let question of questions" class="list-group-item card mt-2">
         <div [ngSwitch]="question.type" class="card-body">
