@@ -19,8 +19,5 @@ export class QuizService {
       headers: {
         'content-type': 'application/json'
       }
-    }).then(response => response.json())
-        .then(result => console.log(result))
-
-
+    })
 }
