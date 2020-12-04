@@ -1,12 +1,16 @@
 <div>
   <h5 class="">Question: {{question.question}}</h5>
   <h4>Graded: {{graded}}</h4>
+  <h4>Correct: {{question.correct}}</h4>
+  <h4>Answer: {{question.answer}}</h4>
   <ul class="list-group mt-2">
     <li *ngFor="let choice of question.choices"
         class="list-group-item"
-        [ngClass]="{'bg-success text-white' : graded && question.correct === choice && question.answer === choice}"
-        [ngClass]="{'bg-primary text-white' : graded && question.correct === choice && question.answer !== choice}"
-        [ngClass]="{'bg-danger text-white' : graded && question.correct !== choice && question.answer === choice}"
+        [ngClass]="{
+          'bg-success text-white' : graded && question.correct === choice && question.answer === choice,
+          'bg-primary text-white' : graded && question.correct === choice && question.answer !== choice,
+          'bg-danger text-white' : graded && question.correct !== choice && question.answer === choice
+          }"
     >
       <label [htmlFor]="choice">{{choice}}</label>
       <input type="radio" [name]="question._id" [id]="choice"
@@ -21,7 +25,5 @@
   </ul>
   <div>
     <div class="row mt-2 mb-2 col-12"><span>Your answer: {{question.answer}}</span></div>
-    <div class="row col-12"><button class="btn btn-info" (click)="grade()" [hidden]="grading">Grade</button></div>
-    <div class="row col-12"><button class="btn btn-outline-info" (click)="grade()" [hidden]="!grading">Answer</button></div>
   </div>
 </div>
