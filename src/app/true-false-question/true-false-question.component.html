@@ -5,9 +5,11 @@
   <h4>Correct: {{question.answer}}</h4>
   <ul class="list-group mt-2">
     <li class="list-group-item"
-        [ngClass]="{'bg-success text-white' : graded && (question.correct === 'true' && question.answer === 'true')}"
-        [ngClass]="{'bg-primary text-white' : graded && (question.correct === 'true' && question.answer === 'false')}"
-        [ngClass]="{'bg-danger text-white' : graded && (question.correct === 'false' && question.answer === 'true')}"
+        [ngClass]="{
+          'bg-success text-white' : graded && question.correct === 'true' && question.answer === 'true',
+          'bg-primary text-white' : graded && question.correct === 'true' && question.answer === 'false',
+          'bg-danger text-white' : graded && question.correct === 'false' && question.answer === 'true'
+          }"
     >
       <label for="truechoice">True</label>
       <input type="radio" [name]="question._id" id="truechoice"
@@ -20,9 +22,11 @@
       <i class="fa fa-circle-o float-right" [hidden]="!graded || !(question.correct === 'true' && question.answer === 'false')"></i>
     </li>
     <li class="list-group-item"
-        [ngClass]="{'bg-success text-white' : graded && question.correct === 'false' && question.answer === 'false'}"
-        [ngClass]="{'bg-primary text-white' : graded && question.correct === 'false' && question.answer === 'true'}"
-        [ngClass]="{'bg-danger text-white' : graded && question.correct === 'true' && question.answer === 'false'}"
+        [ngClass]="{
+          'bg-success text-white' : graded && question.correct === 'false' && question.answer === 'false',
+          'bg-primary text-white' : graded && question.correct === 'false' && question.answer === 'true',
+          'bg-danger text-white' : graded && question.correct === 'true' && question.answer === 'false'
+          }"
     >
       <label for="falsechoice">False</label>
       <input type="radio" [name]="question._id" id="falsechoice"
@@ -37,8 +41,6 @@
   </ul>
   <div>
     <div class="row mt-2 mb-2 col-12"><span>Your answer: {{question.answer}}</span></div>
-    <div class="row col-12"><button class="btn btn-info" (click)="grade()" [hidden]="grading">Grade</button></div>
-    <div class="row col-12"><button class="btn btn-outline-info" (click)="grade()" [hidden]="!grading">Answer</button></div>
   </div>
 </div>
 
