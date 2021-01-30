@@ -1,27 +1,18 @@
-# Cs5610Fa20CohenwClientAngular
+# EDTEACH - Learning Management Prototype
+## Student Client
+## DEPLOYED TO:
+
+## What Is EdTeach?
+EdTeach: Students is a mock learning management app (like Canvas or Blackboard). The students portal allows students to view courses and take quizzes. These are stored on an external server (https://github.com/whysgai/EdTeach_Server_Java).  
+
+## What technology is used in the EdTeach client?
+The front-end of EdTeach for students Is built in Angular.js, with styling predominantly constructed with Bootstrap.
+
+## What's with the name?
+Etymology: Blackboard (the software) -> Blackbeard (the pirate) a.k.a Edward Teach -> EdTeach
+
+## When and why was EdTeach created?
+EdTeach was built over the fall of 2020 for the Web Development course of my MSCS program at Northeastern University
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.0.
-
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
