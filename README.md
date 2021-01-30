@@ -3,7 +3,7 @@
 ## DEPLOYED TO:
 
 ## What Is EdTeach?
-EdTeach: Students is a mock learning management app (like Canvas or Blackboard). The students portal allows students to view courses and take quizzes. These are stored on an external server (https://github.com/whysgai/EdTeach_Server_Java).  
+EdTeach: Students is a mock learning management app (like Canvas or Blackboard). The students portal allows students to view courses and take quizzes. These are stored on an external server (https://github.com/whysgai/EdTeach_Server_NodeJS).  
 
 ## What technology is used in the EdTeach client?
 The front-end of EdTeach for students Is built in Angular.js, with styling predominantly constructed with Bootstrap.
