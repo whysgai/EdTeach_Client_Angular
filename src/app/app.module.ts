@@ -25,6 +25,8 @@ import {QuizService} from '../services/QuizService';
 import {QuestionService} from '../services/QuestionService';
 import { AttemptListComponent } from './attempt-list/attempt-list.component';
 import {AttemptService} from '../services/AttemptService';
+import { FinalOneComponent } from './final-one/final-one.component';
+import { TestComponent } from './test/test.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +44,9 @@ import {AttemptService} from '../services/AttemptService';
     TrueFalseQuestionComponent,
     MultiChoiceQuestionComponent,
     LandingPageComponent,
-    AttemptListComponent
+    AttemptListComponent,
+    FinalOneComponent,
+    TestComponent
   ],
   imports: [
     BrowserModule,
